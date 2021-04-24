@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
+import LogIn from './Login.js'
 
 class App extends Component {
 
@@ -36,7 +37,7 @@ class App extends Component {
           <div>
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
-            <Route exact path="/login" render={LogInComponent}/>
+            <Route exact path="/Login" render={LogInComponent}/>
           </div>
         </Router>
     );
