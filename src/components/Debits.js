@@ -15,9 +15,46 @@ class Debits extends Component {
       }
     }
   }
-
   //handlechange func to be done
+  handleChange = (e) => {
+    
+    const updatedItem = {...this.state.item};
+    const inputValue = e.target.value;
+    const inputField = e.target.name;
+
+    updatedItem[inputField] = inputValue;
+
+    this.setState({
+      item: updatedItem
+    });
+  }
+  
   //handleSubmit func to be done
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const newItem = {...this.state.item};
+    if(newItem.description === ''){
+      prompt('Please enter a description!');
+      return;
+    }
+    if(newItem.amount === 0){
+      prompt('Please enter a valid amount!');
+      return;
+    }
+    newItem.date = this.getDateAndTime();
+    // itemDate.setState(getDateAndTime());
+    this.props.addDebit(newItem);
+  }
+
+  getDateAndTime = () =>  {
+    var today = new Date();
+    var date = (today.getMonth()+1)+ '-' + today.getDate() + '-' + today.getFullYear();
+    var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    var dateTime = date + " " + time;
+    
+    return dateTime;
+    
+  }
   //complete render and return
   render() {
        console.log(this.props.debits.length);
@@ -51,7 +88,24 @@ class Debits extends Component {
           <AccountBalance accountBalance={this.props.accountBalance}/>
 
           <div>
-
+          <div className= "add-debits-area">
+          <form onSubmit = {this.handleSubmit}>
+            <div>
+              <label htmlFor="description">Description: </label>
+              <input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
+            </div>
+            <div>
+              <label htmlFor="amount">Amount: </label>
+              <input type="number" name="amount" onChange={this.handleChange} value={this.state.amount}/>
+            </div>
+            <div>
+              <label htmlFor="date">Date: {this.getDateAndTime()}</label>
+              
+            </div>
+            
+            <button>Add Debit</button>
+          </form>
+        </div>
         </div>
 
         <footer>
