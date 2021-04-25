@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AccountBalance from './AccountBalance';
+
 
 class Debits extends Component {
 
@@ -18,22 +20,38 @@ class Debits extends Component {
   //handleSubmit func to be done
   //complete render and return
   render() {
+       console.log(this.props.debits.length);
+      this.props.debits.map(debt => {
+         console.log(debt);
+      });
     return (
       <div>
         <div>
-          <h1>Credits</h1>
+          <h1>Debits</h1>
         </div>
-        <div>
-          <Link to="/">Home</Link>
-        </div>
-        <div>
-          <Link to="/Login">Log In</Link>
-        </div>
-        <div>
-          <Link to="/userProfile">User Profile</Link>
-        </div>
-        <div>
-          <Link to="/Crebits">Crebits</Link>
+          <h3>Display Debit</h3>
+          <table>
+              <tr>
+                  <th> Description</th>
+                  <th> Amount</th>
+                  <th> Date</th>
+              </tr>
+
+          {this.props.debits.map(debt => {
+              return <tr key={debt.id}>
+                  <td>{debt.description}</td>
+                  <td>{debt.amount}</td>
+                  <td> {debt.date}</td>
+                  </tr>
+
+          })}
+          </table>
+          <h3>Amount Display</h3>
+
+          <AccountBalance accountBalance={this.props.accountBalance}/>
+
+          <div>
+
         </div>
 
       </div>

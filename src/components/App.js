@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Home from './components/Home';
-import UserProfile from './components/UserProfile';
-import LogIn from './components/Login.js';
-import Debits from './components/Debits.js';
-import Credits from './components/Credits.js';
+import Home from './Home';
+import UserProfile from './UserProfile';
+import LogIn from './Login.js';
+import Debits from './Debits.js';
+import Credits from './Credits.js';
 import axios from "axios";
+import './App.css';
+
 
 class App extends Component {
 
@@ -27,25 +29,29 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    let debits = await axios.get("https://moj-api.herokuapp.com/debits");
+    let debitsResponse = await axios.get("https://moj-api.herokuapp.com/debits");
     let credits = await axios.get("https://moj-api.herokuapp.com/credits");
 
-    debits = debits.data;
-    credits = credits.data;
+    let debitsArr = debitsResponse.data;
+    let creditsArr = credits.data;
 
     let debitTotal = 0;
     let creditTotal = 0;
 
-    debits.forEach((debit) => {
+      debitsArr.forEach((debit) => {
       debitTotal += debit.amount
     })
 
-    credits.forEach((credit) => {
+      creditsArr.forEach((credit) => {
       creditTotal += credit.amount
     })
 
     const accountBalance = creditTotal - debitTotal;
-    this.setState({debits, credits, accountBalance});
+      console.log(debitTotal);
+
+      console.log(debitsArr);
+
+     this.setState({debits: debitsArr, credits: creditsArr});
   }
 
   //Debits.js has the item. This function pushes it to a debit array and updates balance
@@ -71,8 +77,8 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const DebitsComponent = () => (<Debits accountBalance={this.setState.accountBalance} debits={this.setState.debits} addDebit={this.addDebit}/>);
-    const CreditsComponent = () => (<Credits accountBalance={this.setState.accountBalance} credits={this.setState.credits} addCrebit={this.addCredit}/>);
+    const DebitsComponent = () => (<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit()}/>);
+    const CreditsComponent = () => (<Credits accountBalance={this.state.accountBalance} credits={this.state.credits} addCrebit={this.addCredit()}/>);
 
     return (
         <Router>
@@ -81,7 +87,7 @@ class App extends Component {
             <Route exact path="/UserProfile" render={UserProfileComponent}/>
             <Route exact path="/Login" render={LogInComponent}/>
             <Route exact path="/Debits" render={DebitsComponent}/>
-            <Route exact path="/Crebits" render={CreditsComponent}/>
+            <Route exact path="/Credits" render={CreditsComponent}/>
           </div>
         </Router>
     );
