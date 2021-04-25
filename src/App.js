@@ -27,8 +27,8 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    letdebits = await axios.get("https://moj-api.herokuapp.com/debits");
-    letcredits = await axios.get("https://moj-api.herokuapp.com/credits");
+    let debits = await axios.get("https://moj-api.herokuapp.com/debits");
+    let credits = await axios.get("https://moj-api.herokuapp.com/credits");
 
     debits = debits.data;
     credits = credits.data;
@@ -50,6 +50,7 @@ class App extends Component {
 
   //Debits.js has the item. This function pushes it to a debit array and updates balance
   addDebit = (item) => {
+
 
   }
 

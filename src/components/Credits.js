@@ -98,15 +98,15 @@ class Credits extends Component {
           <AccountBalance accountBalance={this.props.accountBalance}/> 
           <h2>Credits:</h2>
           <div className = "credit-info">
-            {this.props.credits.map((index) => {
-              return(
-                <div key={index}>
-                  <h4>Description: {credits.description}</h4>
-                  <p>Amount: ${credits.amount}</p>
-                  <p>Date: {credits.date}</p>
-                </div>
-              )
-            })}
+            {/*{this.props.credits.map((index) => {*/}
+              {/*return(*/}
+                {/*<div key={index}>*/}
+                  {/*<h4>Description: {credits.description}</h4>*/}
+                  {/*<p>Amount: ${credits.amount}</p>*/}
+                  {/*<p>Date: {credits.date}</p>*/}
+                {/*</div>*/}
+              {/*)*/}
+            {/*})}*/}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Dedits extends Component {
+class Debits extends Component {
 
   constructor() {
     super()
