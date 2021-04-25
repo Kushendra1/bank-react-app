@@ -8,14 +8,14 @@ class Dedits extends Component {
     this.state = {
       item: {
         description: '',
-        amount: 0
+        amount: 0,
         date: ''
       }
     }
   }
 
   //handlechange func to be done
-  //handleSubmit func to be done 
+  //handleSubmit func to be done
   //complete render and return
   render() {
     return (
@@ -23,3 +23,6 @@ class Dedits extends Component {
     )
   }
 }
+
+
+export default Debits;

@@ -8,7 +8,7 @@ class Credits extends Component {
     this.state = {
       item: {
         description: '',
-        amount: 0
+        amount: 0,
         date: ''
       }
     }
@@ -23,3 +23,5 @@ class Credits extends Component {
     )
   }
 }
+
+export default Credits;
