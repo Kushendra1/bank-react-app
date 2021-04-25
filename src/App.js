@@ -23,7 +23,7 @@ class App extends Component {
     }
 
     this.addDebit = this.addDebit.bind(this);
-    this.addCredit = this.addDebit.bind(this);
+    this.addCredit = this.addCredit.bind(this);
   }
 
   async componentDidMount(){
@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   addCredit = (item) => {
-
+    
   }
 
   mockLogIn = (logInInfo) => {
@@ -71,16 +71,16 @@ class App extends Component {
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
     const DebitsComponent = () => (<Debits accountBalance={this.setState.accountBalance} debits={this.setState.debits} addDebit={this.addDebit}/>);
-    const CrebitsComponent = () => (<Crebits accountBalance={this.setState.accountBalance} crebits={this.setState.crebits} addCrebit={this.addCrebit}/>);
+    const CreditsComponent = () => (<Credits accountBalance={this.setState.accountBalance} credits={this.setState.credits} addCrebit={this.addCredit}/>);
 
     return (
         <Router>
           <div>
             <Route exact path="/" render={HomeComponent}/>
-            <Route exact path="/userProfile" render={UserProfileComponent}/>
+            <Route exact path="/UserProfile" render={UserProfileComponent}/>
             <Route exact path="/Login" render={LogInComponent}/>
-            <Route exact path="/debits" render={DebitsComponent}/>
-            <Route exact path="/crebits" render={CrebitsComponent}/>
+            <Route exact path="/Debits" render={DebitsComponent}/>
+            <Route exact path="/Crebits" render={CreditsComponent}/>
           </div>
         </Router>
     );
