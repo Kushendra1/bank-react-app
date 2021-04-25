@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
+
 class Credits extends Component {
 
   constructor() {
@@ -35,25 +36,27 @@ class Credits extends Component {
     const newItem = {...this.state.item};
     console.log(newItem);
     if(newItem.description === ''){
-      prompt('Please enter a description');
+      prompt('Please enter a description!');
       return;
     }
     if(newItem.amount === 0){
       prompt('Please enter a valid amount!');
       return;
     }
-    // this.setState(item=> {item.date: getDateAndTime()})
+    newItem.date = this.getDateAndTime();
+    // itemDate.setState(getDateAndTime());
     this.props.addCredit(newItem);
   }
 
   //gets date and time
-  getDateAndTime = () => {
+   getDateAndTime = () =>  {
     var today = new Date();
     var date = (today.getMonth()+1)+ '-' + today.getDate() + '-' + today.getFullYear();
     var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     var dateTime = date + " " + time;
-    document.getElementById("currentDateTime").value = dateTime;
-    console.log(dateTime);
+    
+    return dateTime;
+    
   }
 
 
@@ -97,6 +100,11 @@ class Credits extends Component {
               <label htmlFor="amount">Amount: </label>
               <input type="number" name="amount" onChange={this.handleChange} value={this.state.amount}/>
             </div>
+            <div>
+              <label htmlFor="date">Date: {this.getDateAndTime()}</label>
+              
+            </div>
+            
             <button>Add Credit</button>
           </form>
         </div>
@@ -116,6 +124,7 @@ class Credits extends Component {
 
 
       </div>
+      
     )
   }
 }

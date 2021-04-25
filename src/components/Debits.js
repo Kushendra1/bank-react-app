@@ -54,6 +54,19 @@ class Debits extends Component {
 
         </div>
 
+        <footer>
+              <div>
+                  <nav>
+                      <ul>
+                          <Link to="/">Home &emsp;&emsp;</Link>
+                          <Link to="/Login">Log In &emsp;&emsp;</Link>
+                          <Link to="/UserProfile">User Profile &emsp;&emsp;</Link>
+                          <Link to="/Credits">Credits &emsp;&emsp;</Link>
+                      </ul>
+                  </nav>
+              </div>
+          </footer>
+
       </div>
     )
   }
