@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/bank-react-app/static/css/main.9040edaa.chunk.css",
+    "main.js": "/bank-react-app/static/js/main.35606df9.chunk.js",
+    "main.js.map": "/bank-react-app/static/js/main.35606df9.chunk.js.map",
+    "runtime-main.js": "/bank-react-app/static/js/runtime-main.9041af54.js",
+    "runtime-main.js.map": "/bank-react-app/static/js/runtime-main.9041af54.js.map",
+    "static/js/2.c695d5f4.chunk.js": "/bank-react-app/static/js/2.c695d5f4.chunk.js",
+    "static/js/2.c695d5f4.chunk.js.map": "/bank-react-app/static/js/2.c695d5f4.chunk.js.map",
+    "static/js/3.38b91235.chunk.js": "/bank-react-app/static/js/3.38b91235.chunk.js",
+    "static/js/3.38b91235.chunk.js.map": "/bank-react-app/static/js/3.38b91235.chunk.js.map",
+    "index.html": "/bank-react-app/index.html",
+    "static/css/main.9040edaa.chunk.css.map": "/bank-react-app/static/css/main.9040edaa.chunk.css.map",
+    "static/js/2.c695d5f4.chunk.js.LICENSE.txt": "/bank-react-app/static/js/2.c695d5f4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/bank-react-app/static/media/bank_logo.5a86b688.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9041af54.js",
+    "static/js/2.c695d5f4.chunk.js",
+    "static/css/main.9040edaa.chunk.css",
+    "static/js/main.35606df9.chunk.js"
+  ]
+}
