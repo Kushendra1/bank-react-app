@@ -45,6 +45,7 @@ class Credits extends Component {
     }
     newItem.date = this.getDateAndTime();
     // itemDate.setState(getDateAndTime());
+      console.log(newItem);
     this.props.addCredit(newItem);
   }
 
