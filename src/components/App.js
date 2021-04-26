@@ -57,12 +57,21 @@ class App extends Component {
   //Debits.js has the item. This function pushes it to a debit array and updates balance
   addDebit = (item) => {
 
-
+      if(this.state.debits!== '' && item!== undefined) {
+          let newArray =  this.state.debits;
+          newArray.push(item);
+          this.setState({accountBalance: Number(this.state.accountBalance) + Number(item.amount)});
+          this.setState({debits: newArray});
+      }
   }
 
   addCredit = (item) => {
-    
-
+    if(this.state.credits!== '' && item!== undefined) {
+        let newArray =  this.state.credits;
+          newArray.push(item);
+          this.setState({accountBalance: Number(this.state.accountBalance) - Number(item.amount)});
+          this.setState({credits: newArray});
+    }
   }
 
   mockLogIn = (logInInfo) => {
@@ -78,8 +87,8 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const DebitsComponent = () => (<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit()}/>);
-    const CreditsComponent = () => (<Credits accountBalance={this.state.accountBalance} credits={this.state.credits} addCrebit={this.addCredit()}/>);
+    const DebitsComponent = () => (<Debits accountBalance={this.state.accountBalance} debits={this.state.debits} addDebit={this.addDebit}/>);
+    const CreditsComponent = () => (<Credits accountBalance={this.state.accountBalance} credits={this.state.credits} addCredit={this.addCredit}/>);
 
     return (
         <Router>
