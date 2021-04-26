@@ -1,6 +1,112 @@
-.App {
+.title{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 50px;
+  cursor: default;
+}
+
+.logo{
+  background-image: url("./bank_logo.png");
+}
+
+.home-links{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #61dafb;
+}
+
+a{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+}
+
+.account-balance{
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.section-title{
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+}
+
+.user-info-display-area{
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.credits-display-area{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.add-credits-area{
+  padding-top: 30px;
   text-align: center;
 }
+
+.add-credits-form label{
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-credits-form input{
+  font-size: 25px;
+}
+
+.submit-btn{
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 25px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s all;
+}
+.submit-btn-debit{
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 25px;
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s all;
+}
+
+.submit-btn:hover{
+  background-color: coral;
+}
+
+.submit-btn-debit:hover{
+  background-color: lightgreen;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+
 
 .App-logo {
   height: 40vmin;

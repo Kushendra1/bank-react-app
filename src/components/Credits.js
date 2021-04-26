@@ -66,9 +66,9 @@ class Credits extends Component {
     return (
       <div>
         <div>
-          <h1>Credits</h1>
+          <h1 className="title">Credits</h1>
             <div className = "credits-display-area">
-                <h3>Display Credit</h3>
+                <h3 className="section-title">Display Credit</h3>
               <table>
                     <tr>
                         <th> Description</th>
@@ -85,14 +85,14 @@ class Credits extends Component {
                     })}
                 </table>
             </div>
-          <div>
-                <h3>Amount Display</h3>
-                <AccountBalance accountBalance={this.props.accountBalance}/>
-            <br/>
+          <div className="account-balance">
+            <h3 className="section-title">Amount Display</h3>
+            <AccountBalance accountBalance={this.props.accountBalance}/>
           </div>
         </div>
         <div className= "add-credits-area">
-          <form onSubmit = {this.handleSubmit}>
+          <h3 className="section-title">Add Credits</h3>
+          <form onSubmit = {this.handleSubmit} className="add-credits-form">
             <div>
               <label htmlFor="description">Description: </label>
               <input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
@@ -106,12 +106,12 @@ class Credits extends Component {
               
             </div>
             
-            <button>Add Credit</button>
+            <button className="submit-btn">Add Credit</button>
           </form>
         </div>
 
           <footer>
-              <div>
+              <div className="home-links">
                   <nav>
                       <ul>
                           <Link to="/">Home &emsp;&emsp;</Link>

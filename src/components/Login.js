@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import './App.css';
 
 class LogIn extends Component {
   constructor () {
@@ -34,17 +35,18 @@ class LogIn extends Component {
     }
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className= "add-credits-area">
+        <h1 className="title">User Login</h1>
+        <form onSubmit={this.handleSubmit} className="add-credits-form">
           <div>
-            <label htmlFor="userName">User Name</label>
+            <label htmlFor="userName">User Name: </label>
             <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName} />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password: </label>
             <input type="password" name="password" />
           </div>
-          <button>Log In</button>
+          <button className="submit-btn-debit">Log In</button>
         </form>
       </div>
     )
