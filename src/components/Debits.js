@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AccountBalance from './AccountBalance';
+import './App.css';
 
 
 class Debits extends Component {
@@ -63,10 +64,9 @@ class Debits extends Component {
       });
     return (
       <div>
-        <div>
-          <h1>Debits</h1>
-        </div>
-          <h3>Display Debit</h3>
+        <h1 className="title">Debits</h1>
+        <div className = "credits-display-area">
+          <h3 className="section-title">Display Debit</h3>
           <table>
               <tr>
                   <th> Description</th>
@@ -83,13 +83,16 @@ class Debits extends Component {
 
           })}
           </table>
-          <h3>Amount Display</h3>
+        </div>
+        <div className="account-balance">
+          <h3 className="section-title">Amount Display</h3>
 
           <AccountBalance accountBalance={this.props.accountBalance}/>
-
-          <div>
-          <div className= "add-debits-area">
-          <form onSubmit = {this.handleSubmit}>
+        </div>
+        <div>
+          <div className= "add-credits-area">
+          <h3 className="section-title">Add Debits</h3>
+          <form onSubmit = {this.handleSubmit} className="add-credits-form">
             <div>
               <label htmlFor="description">Description: </label>
               <input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
@@ -103,13 +106,13 @@ class Debits extends Component {
               
             </div>
             
-            <button>Add Debit</button>
+            <button className="submit-btn-debit">Add Debit</button>
           </form>
         </div>
         </div>
 
         <footer>
-              <div>
+              <div className="home-links">
                   <nav>
                       <ul>
                           <Link to="/">Home &emsp;&emsp;</Link>
